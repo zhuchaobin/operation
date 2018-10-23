@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport" />
+<title>无模版</title>
+<link rel="stylesheet"
+	th:href="@{/resources/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/resources/dist/css/skins/_all-skins.css}" />
+<link rel="stylesheet" th:href="@{/resources/dist/css/AdminLTE.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/resources/dist/css/font-awesome.min.css}" />
+<link rel="stylesheet" th:href="@{/resources/dist/css/ionicons.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/resources/plugins/bootstrapValidator/bootstrapValidator.min.css}" />
+<link rel="stylesheet" th:href="@{/resources/e7/css/e7-0.2.css}" />
+<link rel="stylesheet"
+	th:href="@{/resources/e7/e7table/e7table-0.2.css}" />
+</head>
+
+<body>
+	<!-- Main content -->
+	<section id="sec_main" class="content">
+		<!-- 条件查询 -->
+		<div class="box box-info">
+
+			<!-- 条件区域 -->
+			<div class="box-body" style="padding-bottom: 0px;">
+				<form id="frm_query" class="form-horizontal">
+					<div id="div_criteria" class="flowlayout">
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">长约类型：</label>
+								<div class="col-sm-8">
+									<input type="radio" name="arTp"  value="01" id="checked">代销</input>
+									&nbsp<input type="radio" name="arTp"  value="02" >代购</input>
+									&nbsp<input type="radio" name="arTp"  value="03" >全流程</input>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+<div class="form-group">
+</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">采购方：</label>
+								<div class="col-sm-8">
+									<input name="pchPrty" class="form-control" placeholder="采购方" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">供应商：</label>
+								<div class="col-sm-8">
+									<input name="splr" class="form-control" placeholder="供应商" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">长约开始日期：</label>
+								<div class="col-sm-8">
+									<input name="arStdt" class="form-control" placeholder="长约开始日期" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">长约结束日期：</label>
+								<div class="col-sm-8">
+									<input name="arEddt" class="form-control" placeholder="长约结束日期" />
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">提货周期：</label>
+								<div class="col-sm-8">
+									<input name="pckupgdsCyc" class="form-control" placeholder="提货周期" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">协议仓库：</label>
+								<div class="col-sm-8">
+									<input name="agrmStg" class="form-control" placeholder="协议仓库" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">业务类型：</label>
+								<div class="col-sm-8">
+						<select name="btp" class="form-control">
+							<option value="">-请选择-</option>
+							<option value="01">订单融资</option>
+							<option value="02">保证金融资</option>
+							<option value="03">质押融资</option>
+						</select>
+								</div>
+								
+
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">融资比例：</label>
+								<div class="col-sm-8">
+									<input name="fncPctg" class="form-control" placeholder="融资比例" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">预付金比率：</label>
+								<div class="col-sm-8">
+									<input name="prpyGldRto" class="form-control" placeholder="预付金比率" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">额度：</label>
+								<div class="col-sm-8">
+									<input name="lmt" class="form-control" placeholder="额度" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">警戒线：</label>
+								<div class="col-sm-8">
+									<input name="crdn" class="form-control" placeholder="警戒线" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">平仓线：</label>
+								<div class="col-sm-8">
+									<input name="clsposLn" class="form-control" placeholder="平仓线" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">服务费收取方式：</label>
+								<div class="col-sm-8">
+							<select name="svcfeeCmd" class="form-control">
+							<option value="">-请选择-</option>
+							<option value="01">预收</option>
+							<option value="02">现结</option>
+						</select>
+						
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="" class="col-sm-4 control-label">溢短结转方式：</label>
+								<div class="col-sm-8">
+								<select name="splovCrrovMod" class="form-control">
+							<option value="">-请选择-</option>
+							<option value="01">多退少补</option>
+							<option value="02">结转下月</option>
+						</select>							
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+			<!-- 按钮区域 -->
+			<div id="div_buttons" class="box-footer">
+				<button class="btn btn-default pull-right"
+					onclick="javascript:reset()">提交</button>
+				<button class="btn btn-primary pull-right"
+					onclick="javascript:query()" style="margin-right: 15px;">返回</button>
+			</div>
+		</div>
+
+
+	</section>
+	<!-- /.content -->
+
+	<script th:src="@{/resources/plugins/jQuery/jquery-2.2.3.min.js}"></script>
+	<script th:src="@{/resources/plugins/bootbox/bootbox.min.js?v=1}"></script>
+	<script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+	<script
+		th:src="@{/resources/plugins/bootstrapValidator/bootstrapValidator.min.js}"></script>
+	<script th:src="@{/resources/dist/js/app.min.js}"></script>
+	<script th:src="@{/resources/e7/e7util-0.2.js}"></script>
+	<script th:src="@{/resources/e7/e7table/e7table-0.2.js}"></script>
+	<script th:src="@{/resources/e7/e7crud-0.2.js}"></script>
+
+	<script type="text/javascript">
+		var pageSetting = {
+			modelName : '流量套餐',
+			resetPath : '[[@{/postAddress}]]'
+		};
+
+		$(function() {
+			//e7table表格控件初始化
+			e7tableInit();
+			//表单校验控件初始化
+			validatorInit();
+		});
+
+
+
+		/***
+		 * 查询
+		 */
+		function query() {
+			$('#tbl_query').e7table('query', '#frm_query');
+		}
+
+		/***
+		 * 重置
+		 */
+		function reset() {
+			E7.resetForm('#frm_query');
+		}
+
+		/***
+		 * e7table表格控件初始化
+		 */
+		function e7tableInit() {
+			$('#tbl_query').e7table({
+				url : '[[@{/postAddress/queryPage}]]',
+				pageSize : 10,
+				autoLoading : true, //控件初始化后，自动远程请求数据
+				selectType : 'single',
+				sortName : 'userName', //排序列名
+				sortOrder : 'desc', //排序方向
+				columns : [ {
+					title : '买家账号',
+					field : 'userName',
+					sortable : false
+				}, {
+					title : '用户名',
+					field : 'chineseName',
+					sortable : false
+				}, {
+					title : '收货人',
+					field : 'name',
+					sortable : false
+				}, {
+					title : '联系电话',
+					field : 'phone',
+					sortable : false
+				}, {
+					title : '省',
+					field : 'province',
+					sortable : false
+				}, {
+					title : '市',
+					field : 'city',
+					sortable : false
+				},{
+					title : '区',
+					field : 'county',
+					sortable : false
+				},{
+					title : '详细地址',
+					field : 'area',
+					sortable : false
+				}, {
+					title : '邮编',
+					field : 'postalCode',
+					sortable : false
+				}, {
+					title : '默认地址',
+					field : 'preferred',
+					formatter : function(value, row, index) {
+						if (value == '1') {
+							return "是"
+						} else {
+							return "-";
+						}
+					}
+				}
+				]
+			});
+		}
+
+	
+
+		function export4Template() {
+			var ifrm = $('#ifr_export');
+			if (ifrm.length == 0) {
+				ifrm = $('<iframe id="ifr_export" style="display:none;height:0px,width:0px></iframe>');
+				$('body').append(ifrm);
+				$('#frm_query').attr('action',
+						pageSetting.resetPath + '/export4Template');
+				$('#frm_query').attr('target', 'ifr_export');
+			}
+			$('#frm_query').submit();
+		}
+
+	</script>
+</body>
+</html>
